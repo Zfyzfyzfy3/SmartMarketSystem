@@ -1,0 +1,55 @@
+# General
+*.log
+*.tmp
+*.swp
+*.bak
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+.env
+
+# Go
+bin/
+*.exe
+*.out
+*.test
+coverage.out
+
+# Node
+node_modules/
+npm-debug.log
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Docker
+*.pid
+
+# Kubernetes
+#*.yaml
+
+# Misc
+*.sqlite3
+*.db
+
+# # Test
+# /test/loadtest/
+# /test/integration/
+# /test/unit/
+
+# # Deployment
+# /deploy/docker/
+# /deploy/k8s/
+# /deploy/scripts/
