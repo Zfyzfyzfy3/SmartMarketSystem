@@ -1,4 +1,2 @@
 # SmartMarketSystem
-# SmartMarketSystem
-# SmartMarketSystem
-# SmartMarketSystem
+marget with smartAgent
