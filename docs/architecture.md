@@ -97,10 +97,8 @@
 
 ## 六、服务发现与配置
 
-当前采用（占位）：
-- 本地 / 开发环境：通过静态配置（`gateway/config.yaml`）列出各服务的 gRPC Endpoint。
-- 生产规划：
-    引入 etcd/Consul 注册中心，服务启动注册，网关定期拉取/订阅变化。
+
+引入 etcd/Consul 注册中心，服务启动注册，网关定期拉取/订阅变化。
 
 健康检查：
 - gRPC 健康检查协议（`grpc.health.v1.Health`）
@@ -112,22 +110,7 @@
 
 ## 七、鉴权与安全（当前阶段说明）
 
-当前阶段（性能/压测优先）暂时使用 Mock 鉴权：
-- 网关接受请求时：
-	- 如果 Header `Authorization` 存在，解析出一个伪造用户ID（例如 `X-Debug-User`）注入到 gRPC Metadata。
-	- 如果不存在，则默认匿名/测试用户。
-- 不验证签名 / 过期，仅透传上下文，方便压测聚焦吞吐量基线。
 
-未来规划：
-1. 引入 JWT 签发服务（user-service 提供 `/auth/token`）。
-2. 支持刷新令牌（Refresh Token + 短周期 Access Token）。
-3. 网关侧启用：
-	 - Token 验证（公钥缓存 + 过期校验）
-	 - RBAC / ABAC（针对商家 vs 普通用户）
-4. 敏感接口（订单支付、秒杀）增加:
-	 - 幂等键校验
-	 - 防刷限流（令牌桶 / Sliding Window）
-5. 后续扩展：API 签名（防重放）、设备指纹、风控策略。
 
 ---
 
